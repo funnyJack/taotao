@@ -9,4 +9,12 @@
         SELECT * FROM tbitem WHERE id = #{id}
     </select>
 
+    <update id="updateItemByIds">
+        UPDATE tbitem SET status = #{type} , updated = #{date}
+        <where>
+            <foreach collection="ids" open="id in(" close=")" separator="," item="id">
+                #{id}
+            </foreach>
+        </where>
+    </update>
 </mapper>

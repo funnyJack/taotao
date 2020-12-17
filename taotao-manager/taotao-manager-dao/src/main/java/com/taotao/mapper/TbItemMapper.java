@@ -5,6 +5,7 @@ import com.taotao.pojo.TbItem;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.Date;
 import java.util.List;
 
 public interface TbItemMapper {
@@ -15,4 +16,6 @@ public interface TbItemMapper {
     int findTbItemByCount();
     @Select("SELECT * from tbitem limit #{index},#{pageSize}")
     List<TbItem> finTbItemByPage(@Param("index") int index,@Param("pageSize") int pagaSize);
+
+    int updateItemByIds(@Param("ids")List<Long> ids,@Param("type") int type,@Param("date") Date date);
 }
