@@ -4,7 +4,17 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.taotao.mapper.TbItemMapper">
-
+    <sql id="search">
+        <where>
+            <if test="title != ''">
+                and title LIKE "%${title}%" AND
+            </if>
+            price BETWEEN #{priceMin} AND #{priceMax}
+            <if test="cId !=null">
+                AND cId = #{cId}
+            </if>
+        </where>
+    </sql>
     <select id="findTbTtemById" parameterType="Long" resultType="com.taotao.pojo.TbItem">
         SELECT * FROM tbitem WHERE id = #{id}
     </select>
@@ -17,4 +27,16 @@
             </foreach>
         </where>
     </update>
+
+    <select id="findTbItemByLikeConut" resultType="Integer">
+        SELECT COUNT(*) FROM tbitem
+        <include refid="search"/>
+    </select>
+
+    <select id="findTbItemByLike" resultType="com.taotao.pojo.TbItem">
+        SELECT * FROM tbitem
+        <include refid="search"/>
+        LIMIT #{page},#{limit}
+    </select>
+
 </mapper>

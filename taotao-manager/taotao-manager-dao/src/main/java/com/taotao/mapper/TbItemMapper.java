@@ -18,4 +18,8 @@ public interface TbItemMapper {
     List<TbItem> finTbItemByPage(@Param("index") int index,@Param("pageSize") int pagaSize);
 
     int updateItemByIds(@Param("ids")List<Long> ids,@Param("type") int type,@Param("date") Date date);
+
+    int findTbItemByLikeConut(@Param("title") String title, @Param("priceMin")Integer priceMin, @Param("priceMax")Integer priceMax, @Param("cId")Long cId);
+
+    List<TbItem> findTbItemByLike(@Param("title")String title, @Param("priceMin")Integer priceMin, @Param("priceMax")Integer priceMax,@Param("cId") Long cId, @Param("page")Integer page, @Param("limit")Integer limit);
 }

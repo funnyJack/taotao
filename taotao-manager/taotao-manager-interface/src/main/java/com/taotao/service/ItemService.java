@@ -7,6 +7,7 @@ import com.taotao.pojo.TbItem;
 import java.util.Date;
 import java.util.List;
 
+//商品服务
 public interface ItemService {
     TbItem findTbTtemById(Long ItemId);
     LayuiResult findTbItemByPage(int page ,int limit);
@@ -21,4 +22,6 @@ public interface ItemService {
      * @return 页面需要的json格式，web会解析这个json，吧需要的数据展示到web上面
      */
     TaotaoResult updateItem(List<TbItem> tbItems, int type, Date date);
+
+    LayuiResult getLikeItem(Integer page, Integer limit, String title, Integer priceMin, Integer priceMax, Long cId);
 }
