@@ -13,13 +13,29 @@
     <artifactId>taotao-manager-web</artifactId>
     <packaging>war</packaging>
     <dependencies>
-
+        <dependency>
+            <groupId>com.taotao</groupId>
+            <artifactId>taotao-search-interface</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.taotao</groupId>
+            <artifactId>taotao-content-interface</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>com.taotao</groupId>
             <artifactId>taotao-manager-interface</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
         <!-- JSP相关 -->
         <dependency>
             <groupId>jstl</groupId>

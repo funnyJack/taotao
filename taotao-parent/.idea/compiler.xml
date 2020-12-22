@@ -6,9 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="taotao-manager-service" />
+        <module name="taotao-content-service" />
         <module name="taotao-manager-interface" />
+        <module name="taotao-portal-web" />
+        <module name="taotao-content-interface" />
+        <module name="taotao-manager-service" />
         <module name="taotao-manager-web" />
+        <module name="taotao-search-service" />
+        <module name="taotao-search-interface" />
         <module name="taotao-manager-dao" />
         <module name="taotao-common" />
         <module name="taotao-manager-pojo" />

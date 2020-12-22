@@ -33,4 +33,16 @@
                     address="192.168.111.128:2181"/>
     <dubbo:reference interface="com.taotao.service.ItemService" id="itemService" timeout="10000"/>
     <dubbo:reference interface="com.taotao.service.ItemCatService" id="itemCatService" timeout="10000"/>
+    <dubbo:reference interface="com.taotao.content.service.ItemContentService" id="itemContentService" timeout="10000"/>
+    <dubbo:reference interface="com.taotao.search.service.SearchService" id="searchService" timeout="60000"/>
+
+    <!-- 文件上传 -->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 设置上传文件的最大尺寸为5MB -->
+        <property name="maxUploadSize">
+            <value>5242880</value>
+        </property>
+    </bean>
+
 </beans>

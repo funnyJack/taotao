@@ -1,5 +1,6 @@
 package com.taotao.controller;
 
+import com.taotao.pojo.LayuiResult;
 import com.taotao.pojo.ZtreeResult;
 import com.taotao.service.ItemCatService;
 import com.taotao.service.ItemService;
@@ -14,6 +15,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/itemCat")
 public class ItemCatController {
+
     @Autowired
     private ItemCatService itemCatService;
 
@@ -23,5 +25,6 @@ public class ItemCatController {
         List<ZtreeResult> ztreeResult = itemCatService.getZtreeResult(id);
         return ztreeResult;
     }
+
 
 }
