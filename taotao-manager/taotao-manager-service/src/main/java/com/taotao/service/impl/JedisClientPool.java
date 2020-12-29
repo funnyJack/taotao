@@ -1,6 +1,8 @@
 package com.taotao.service.impl;
 
+import com.taotao.constant.RedisConstant;
 import com.taotao.service.JedisClient;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;

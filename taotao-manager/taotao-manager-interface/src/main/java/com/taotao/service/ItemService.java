@@ -7,7 +7,7 @@ import java.util.List;
 
 //商品服务
 public interface ItemService {
-    TbItem findTbTtemById(Long ItemId);
+    TbItem findTbItemById(Long ItemId);
     LayuiResult findTbItemByPage(int page ,int limit);
 
     LayuiResult itemDelete(List<TbItem> tbItems);
@@ -25,6 +25,22 @@ public interface ItemService {
 
     PictureResult addPicture(String fileName, byte[] bytes);
 
-    TaotaoResult addItem(TbItem tbItem, String itemDesc);
+    /**
+     * 添加商品到数据库中
+     * @param tbItem 商品基本信息
+     * @param itemDesc 商品描述信息
+     * @param paramKeyIds 规格参数项id集合
+     * @param paramValue 规格参数值集合
+     * @return 返回TaotaoResult
+     */
+    TaotaoResult addItem(TbItem tbItem, String itemDesc, List<Integer> paramKeyIds, List<String> paramValue);
 
+    TbItemDesc findTbItemDescByItemId(Long itemId);
+
+    /**
+     * 根据商品id查询商品规格参数组和规格参数项和规格参数值信息
+     * @param itemId 商品id
+     * @return
+     */
+    List<TbItemParamGroup> findTbItemGroupByItemId(Long itemId);
 }

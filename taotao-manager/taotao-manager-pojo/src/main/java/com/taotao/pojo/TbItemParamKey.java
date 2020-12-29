@@ -8,6 +8,17 @@ public class TbItemParamKey implements Serializable {
 	private Integer groupId;
 	//建立多对一的关系
 	private TbItemParamGroup paramGroup;
+//	建立一对一关系
+	private TbItemParamValue itemParamValue;
+
+	public TbItemParamValue getItemParamValue() {
+		return itemParamValue;
+	}
+
+	public void setItemParamValue(TbItemParamValue itemParamValue) {
+		this.itemParamValue = itemParamValue;
+	}
+
 	public Integer getId() {
 		return id;
 	}

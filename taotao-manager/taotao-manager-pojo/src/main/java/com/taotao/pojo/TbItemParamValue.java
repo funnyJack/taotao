@@ -6,6 +6,7 @@ public class TbItemParamValue implements Serializable {
 	private Long itemId;
 	private Integer paramId;
 	private String paramValue;
+
 	public Long getItemId() {
 		return itemId;
 	}
@@ -28,5 +29,4 @@ public class TbItemParamValue implements Serializable {
 	public String toString() {
 		return "TbItemParamValue [itemId=" + itemId + ", paramId=" + paramId + ", paramValue=" + paramValue + "]";
 	}
-	
 }
